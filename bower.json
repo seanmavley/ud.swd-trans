@@ -1,0 +1,23 @@
+{
+  "name": "trans",
+  "description": "caltrain transportation app",
+  "main": "index.js",
+  "authors": [
+    "Rexford<hello@khophi.co>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.2",
+    "foundation-sites": "^6.2.4"
+  }
+}

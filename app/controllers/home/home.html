@@ -1,0 +1,36 @@
+<div class="row" ng-controller="HomeController">
+    <div class="large-8 large-centered small-12">
+        <form data-abide novalidate>
+            <fieldset class="fieldset">
+                <legend>Select train stations</legend>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Departure
+                            <input list='departure' type='text' ng-model='depart' placeholder="Departure" required autocomplete />
+                            <datalist id="departure">
+                                <select name="departure">
+                                    <option></option>
+                                    <option value="individual">Individual</option>
+                                    <option value="organization">organization</option>
+                                </select>
+                            </datalist>
+                        </label>
+                    </div>
+                    <div class="medium-6 columns">
+                        <label>Arrival
+                            <input list='arrival' type='text' placeholder="Arrival" required autocomplete />
+                            <datalist id="arrival">
+                                <select name="arrival">
+                                    <option></option>
+                                    <option value="individual">Individual</option>
+                                    <option value="organization">organization</option>
+                                </select>
+                            </datalist>
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" value="Search" class="button"></input>
+            </fieldset>
+        </form>
+    </div>
+</div>

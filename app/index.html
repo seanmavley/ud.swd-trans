@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="trans">
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trans App</title>
+    <link rel="stylesheet" type="text/css" href="./vendor/foundation-sites/dist/foundation.min.css">
+</head>
+
+<body>
+    <!-- MENU -->
+    <div class="row">
+        <div class="small-12 medium-10 medium-centered columns">
+            <div class="myMenu menu-centered">
+                <div class="show-for-medium">
+                    <a ui-sref="home" class="button hollow">Trans App</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <!-- End Menu -->
+    <div class="row ">
+        <ui-view></ui-view>
+    </div>
+    <script src="./vendor/jquery/dist/jquery.min.js"></script>
+    <script src="./vendor/what-input/what-input.min.js"></script>
+    <script src="./vendor/foundation-sites/dist/foundation.min.js"></script>
+    <script src="./vendor/angular/angular.js"></script>
+    <script src="./vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="build/trans.min.js"></script>
+</body>
+
+</html>
