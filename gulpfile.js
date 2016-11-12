@@ -57,7 +57,9 @@ gulp.task('serve', ['minify-js', 'minify-css'], function() {
     middleware: [historyApiFallback()]
   });
   // watch and rebuild scripts
-  gulp.watch(jsFiles, cssFiles, ['minify-js'])
+  gulp.watch(jsFiles, ['minify-js'])
+    .on('change', browser.reload);
+  gulp.watch(cssFiles, ['minify-css'])
     .on('change', browser.reload);
   gulp.watch(htmlFiles)
     .on('change', browser.reload);
