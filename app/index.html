@@ -7,30 +7,29 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trans App</title>
-    <link rel="stylesheet" type="text/css" href="./vendor/foundation-sites/dist/foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="./vendor/materialize/dist/css/materialize.min.css">
 </head>
 
 <body>
     <!-- MENU -->
-    <div class="row">
-        <div class="small-12 medium-10 medium-centered columns">
-            <div class="myMenu menu-centered">
-                <a ui-sref="home" class="button hollow">Trans App</a>
+    <div class="container">
+        <div class="row">
+            <div>
+                <a class='btn blue lighten-1' href="/"> Home </a>
             </div>
+            <div class="divider blue dark-1" style="margin-bottom:15px;"></div>
         </div>
     </div>
-    <div class="divider"></div>
     <!-- End Menu -->
     <!-- Content here -->
     <ui-view></ui-view>
     <!-- End of Content -->
     <script type="text/javascript" src="./sw-register.js"></script>
     <script src="./vendor/jquery/dist/jquery.min.js"></script>
-    <script src="./vendor/what-input/what-input.min.js"></script>
-    <script src="./vendor/foundation-sites/dist/foundation.min.js"></script>
+    <script src="./vendor/materialize/dist/js/materialize.min.js"></script>
     <script src="./vendor/angular/angular.js"></script>
     <script src="./vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="build/trans.js"></script>
+    <script src="build/trans.min.js"></script>
 </body>
 
 </html>

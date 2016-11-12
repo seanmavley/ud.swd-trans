@@ -18,6 +18,7 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-router": "^0.3.2",
-    "foundation-sites": "^6.2.4"
+    "foundation-sites": "^6.2.4",
+    "materialize": "^0.97.8"
   }
 }

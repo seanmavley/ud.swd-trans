@@ -5,12 +5,16 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/',
         './vendor/jquery/dist/jquery.min.js',
-        './vendor/what-input/what-input.min.js',
-        './vendor/foundation-sites/dist/foundation.min.js',
-        './vendor/foundation-sites/dist/foundation.min.css',
+        './vendor/materialize/dist/js/materialize.min.js',
+        './vendor/materialize/dist/css/materialize.min.css',
+        './vendor/materialize/dist/fonts/roboto/Roboto-Regular.woff2',
+        './vendor/materialize/dist/fonts/roboto/Roboto-Regular.woff',
+        './vendor/materialize/dist/fonts/roboto/Roboto-Regular.ttf',
         './vendor/angular/angular.js',
         './vendor/angular-ui-router/release/angular-ui-router.min.js',
-        './build/trans.js',
+        // './build/trans.js',
+        './build/trans.min.js',
+        './build/app.min.css',
         './controllers/home/home.html',
         './data/json/caltrain.json'
       ]);

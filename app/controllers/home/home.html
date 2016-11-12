@@ -1,59 +1,57 @@
 <div class="row" ng-controller="HomeController">
-    <div class="small-12 medium-8 medium-centered large-6 large-centered columns">
+    <div class="s12 m10 m10-offset-1 l8 l8-offset-2 col">
         <form data-abide novalidate ng-submit="getTrips()" name="getTripsForm">
             <fieldset class="fieldset">
                 <legend>Select train stations</legend>
                 <div class="row">
-                    <div class="medium-6 columns">
+                    <div class="s12 m6 col">
                         <label>Departure
-                            <select name="departure" ng-model="departure" ng-options="s.stop_name for s in stops" required></select>
+                            <select class="browser-default" name="departure" ng-model="departure" ng-options="s.stop_name for s in stops" required></select>
                         </label>
                     </div>
-                    <div class="medium-6 columns">
+                    <div class="s12 m6 col">
                         <label>Arrival
-                            <select name="arrival" ng-model="arrival" ng-options="s.stop_name for s in stops" required></select>
+                            <select class="browser-default" name="arrival" ng-model="arrival" ng-options="s.stop_name for s in stops" required></select>
                         </label>
                     </div>
-                    <div class="small-12 columns">
-                        <input type="submit" ng-disabled="!arrival || !departure" value="Search" class="button">
+                    <div class="s12 col" style="margin-top:10px;">
+                        <input type="submit" ng-disabled="!arrival || !departure" value="Search" class="btn blue lighten-1 ">
                     </div>
                 </div>
             </fieldset>
         </form>
         <div class="panel" ng-show="!trips.length && submitted">
-            <p class="lead">
+            <p class="flow-text">
                 You either selected same station as departure and arrival. Or No search result available!
             </p>
         </div>
         <div class="panel" ng-show="error">
-            <p class="lead">
+            <p class="flow-text">
                 Kindly select a departure and arrival station.
             </p>
         </div>
     </div>
-    <div class="small-12 medium-10 medium-centered large-8 large-centered columns" ng-show="trips.length">
-        <div>
-            <h2 class="lead">Trips between {{departure.stop_name}} and {{arrival.stop_name}}</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Service Type</th>
-                        <th>Route Name</th>
-                        <th>Departure Time</th>
-                        <th>Arrival Time</th>
-                        <th>Trip Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="trip in trips">
-                        <td>{{trip.serviceType}}</td>
-                        <td>{{trip.routeName}}</td>
-                        <td>{{trip.departureTime}}</td>
-                        <td>{{trip.arrivalTime}}</td>
-                        <td>{{trip.tripTime}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="s12 col" ng-show="trips.length">
+        <h2 class="flow-text">Trips between <strong>"{{departure.stop_name}}"</strong> and <strong>"{{arrival.stop_name}}"</strong></h2>
+        <table class="highlight responsive-table">
+            <thead>
+                <tr>
+                    <th>Service Type</th>
+                    <th>Route Name</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Trip Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="trip in trips">
+                    <td>{{trip.serviceType}}</td>
+                    <td>{{trip.routeName}}</td>
+                    <td>{{trip.departureTime}}</td>
+                    <td>{{trip.arrivalTime}}</td>
+                    <td>{{trip.tripTime}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
