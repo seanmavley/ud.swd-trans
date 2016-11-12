@@ -9,6 +9,8 @@ var historyApiFallback = require('connect-history-api-fallback');
 
 var port = process.env.SERVER_PORT || 3000;
 
+var buildDir = 'app/build';
+
 var jsFiles = [
   'app/app.js',
   'app/services/**/*.js',
@@ -20,19 +22,19 @@ var htmlFiles = ['app/**/*.html'];
 
 // remove build directory
 gulp.task('clean', function() {
-  return del(['app/build']);
+  return del([buildDir]);
 });
 
 gulp.task('minify-js', ['clean'], function() {
   var stream = gulp.src(jsFiles)
     .pipe(concat('trans.js'))
-    .pipe(gulp.dest('app/build'))
+    .pipe(gulp.dest(buildDir))
     .pipe(rename('trans.min.js'))
     .pipe(uglify())
     .on('error', function(error) {
       console.log(error);
     })
-    .pipe(gulp.dest('app/build'));
+    .pipe(gulp.dest(buildDir));
   return stream;
 });
 
@@ -41,10 +43,10 @@ gulp.task('minify-js', ['clean'], function() {
 gulp.task('minify-css', function() {
   var stream = gulp.src(['app/assets/css/*.css'])
     .pipe(concat('app.css'))
-    .pipe(gulp.dest('app/build'))
+    .pipe(gulp.dest(buildDir))
     .pipe(rename('app.min.css'))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('app/build'));
+    .pipe(gulp.dest(buildDir));
   return stream;
 })
 

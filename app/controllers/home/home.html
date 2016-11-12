@@ -25,32 +25,35 @@
                 You either selected same station as departure and arrival. Or No search result available!
             </p>
         </div>
+        <div class="panel" ng-show="error">
+            <p class="lead">
+                Kindly select a departure and arrival station.
+            </p>
+        </div>
     </div>
-    <div class="row" ng-show="trips.length">
-        <div class="small-12 medium-10 medium-centered large-8 large-centered columns">
-            <div>
-                <h2 class="lead">Trips between {{departure.stop_name}} and {{arrival.stop_name}}</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Service Type</th>
-                            <th>Route Name</th>
-                            <th>Departure Time</th>
-                            <th>Arrival Time</th>
-                            <th>Trip Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="trip in trips">
-                            <td>{{trip.serviceType}}</td>
-                            <td>{{trip.routeName}}</td>
-                            <td>{{trip.departureTime}}</td>
-                            <td>{{trip.arrivalTime}}</td>
-                            <td>{{trip.tripTime}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="small-12 medium-10 medium-centered large-8 large-centered columns" ng-show="trips.length">
+        <div>
+            <h2 class="lead">Trips between {{departure.stop_name}} and {{arrival.stop_name}}</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Route Name</th>
+                        <th>Departure Time</th>
+                        <th>Arrival Time</th>
+                        <th>Trip Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="trip in trips">
+                        <td>{{trip.serviceType}}</td>
+                        <td>{{trip.routeName}}</td>
+                        <td>{{trip.departureTime}}</td>
+                        <td>{{trip.arrivalTime}}</td>
+                        <td>{{trip.tripTime}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
