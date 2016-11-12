@@ -1,5 +1,5 @@
 <div class="row" ng-controller="HomeController">
-    <div class="s12 m10 m10-offset-1 l8 l8-offset-2 col">
+    <div class="s12 m10 offset-m1 l8 offset-l2 col">
         <form data-abide novalidate ng-submit="getTrips()" name="getTripsForm">
             <fieldset class="fieldset">
                 <legend>Select train stations</legend>
@@ -31,7 +31,7 @@
             </p>
         </div>
     </div>
-    <div class="s12 col" ng-show="trips.length">
+    <div class="s12 m10 offset-m1 l8 offset-l2 col" ng-show="trips.length">
         <h2 class="flow-text">Trips between <strong>"{{departure.stop_name}}"</strong> and <strong>"{{arrival.stop_name}}"</strong></h2>
         <table class="highlight responsive-table">
             <thead>
